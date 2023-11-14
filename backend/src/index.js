@@ -28,7 +28,7 @@ app.use(morgan('dev'));
 //swagger
 const swaggerUI = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerJSDocs = YAML.load('../api.yaml');
+const swaggerJSDocs = YAML.load('./api.yaml');
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerJSDocs));
 
 //assigning routes
@@ -45,8 +45,8 @@ app.use((req, res, next) => {
     });
 });
 
-const server = app.listen(PORT, () =>
-    console.log(`server listening on ${Number(PORT)}`)
+const server = app.listen(5000, () =>
+    console.log(`server listening on 5000`)
 );
 
 const io = require('socket.io')(server, {
